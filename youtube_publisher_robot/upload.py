@@ -39,9 +39,9 @@ def upload_video(title, description, keywords, category, file_location):
     video_entry = gdata.youtube.YouTubeVideoEntry(media=my_media_group,
                                                   geo=where)
     try:
-        new_entry = yt_service.InsertVideoEntry(video_entry, file_location+".flv")
+        new_entry = yt_service.InsertVideoEntry(video_entry, ("%s.%s") % (file_location,"flv"))
     except:
-        new_entry = yt_service.InsertVideoEntry(video_entry, file_location+".mp4")
+        new_entry = yt_service.InsertVideoEntry(video_entry, ("%s.%s") % (file_location,"mp4"))
 
     return new_entry
 
