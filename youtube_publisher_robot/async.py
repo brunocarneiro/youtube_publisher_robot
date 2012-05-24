@@ -14,4 +14,4 @@ class DownUpThread(Thread):
     
     def run(self):
         result = os.system('python %s/youtube_publisher_robot/youtube_publisher_robot/youtube-dl.py %s' %(os.getcwd(),self.url) )
-        upload_video(self.title, self.description, self.keywords, self.category, '%s/%s.flv'%(os.getcwd(),self.url) )
+        upload_video(self.title, self.description, self.keywords, self.category, '%s/%s'%(os.getcwd(),self.url) )
